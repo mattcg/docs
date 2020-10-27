@@ -191,13 +191,15 @@ Aleph supports a couple of OAuth providers out of the box: Google, Facebook and 
 
 #### Using Google OAuth
 
-To get the OAuth credentials please visit the [Google Developers Console](https://console.developers.google.com/). There you will need to [create an API key](https://support.google.com/googleapi/answer/6158862). In the **Authorised redirect URIs** section, use this URL:
+To get the OAuth credentials please visit the [Google Developers Console](https://console.developers.google.com/). There you will need to [create an OAuth 2.0 Client ID](https://developers.google.com/identity/protocols/oauth2). In the **Authorised redirect URIs** section, use this URL format:
 
 ```text
-http://localhost:8080/api/2/sessions/callback/google
+http[s]://[host]/api/2/sessions/callback
 ```
 
-Save the client ID and the client secret as `ALEPH_OAUTH_*` values.
+If running Aleph locally, you might need to use `localhost:8080` for the `host` part.
+
+Save the client ID as `ALEPH_OAUTH_KEY` the client secret as `ALEPH_OAUTH_SECRET`.
 
 #### Using Microsoft Azure
 
